@@ -1,0 +1,13 @@
+server:
+  port: 9077
+  context-path: /nacos-demo
+
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  application:
+    name: nacos-demo
+
