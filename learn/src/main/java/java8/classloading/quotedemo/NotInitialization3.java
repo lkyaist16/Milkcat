@@ -1,4 +1,4 @@
-package java8.classloading;
+package java8.classloading.quotedemo;
 
 import java8.classloading.domain.ConstClass;
 
