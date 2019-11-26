@@ -7,7 +7,7 @@ package arithmetic.dynamicplanning;
  *
  * 第i个物品不装
  */
-public class BackPack {
+public class BackPacket {
 
     public static void main(String[] args) {
 
