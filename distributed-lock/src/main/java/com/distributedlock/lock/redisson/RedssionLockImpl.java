@@ -3,8 +3,11 @@ package com.distributedlock.lock.redisson;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.TimeUnit;
 
 @Component
@@ -13,32 +16,43 @@ public class RedssionLockImpl implements IRedissionLock{
     @Autowired
     private RedissonClient redissonClient;
 
+    /**
+     * 获取锁超时时间
+     */
     private static final long waitTime = 50000L;
 
-    private static final long sleepTime = 10000L;
+    /**
+     * 锁过期时间
+     */
+    private static final long leaseTime = 20000L;
 
     private static TimeUnit timeUnit = TimeUnit.MILLISECONDS;
 
+    private static final ConcurrentMap<String, RLock> rLockConcurrentMap = new ConcurrentHashMap<>();
+
+    @Value("${redisson.lockKeyPre}")
+    private String lockKeyPre;
+
     @Override
     public boolean tryLock(String key) {
+        return this.tryLock(key, waitTime, leaseTime, timeUnit);
+    }
+
+    @Override
+    public boolean tryLock(String key, long leaseTime) {
+        return this.tryLock(key, waitTime, leaseTime, timeUnit);
+    }
+
+    @Override
+    public boolean tryLock(String key, long leaseTime, long sleepTime) {
         return this.tryLock(key, waitTime, sleepTime, timeUnit);
     }
 
     @Override
-    public boolean tryLock(String key, long waitTime) {
-        return this.tryLock(key, waitTime, sleepTime, timeUnit);
-    }
-
-    @Override
-    public boolean tryLock(String key, long waitTime, long sleepTime) {
-        return this.tryLock(key, waitTime, sleepTime, timeUnit);
-    }
-
-    @Override
-    public boolean tryLock(String key, long waitTime, long sleepTime, TimeUnit timeUnit) {
-        RLock rLock = this.getRLock(key);
+    public boolean tryLock(String key, long waitTime, long leaseTime, TimeUnit timeUnit) {
+        RLock rLock = this.getRLock(lockKeyPre + key);
         try {
-            return rLock.tryLock(waitTime, sleepTime, timeUnit);
+            return rLock.tryLock(waitTime, leaseTime, timeUnit);
         } catch (Exception e) {
             return false;
         }
@@ -46,12 +60,23 @@ public class RedssionLockImpl implements IRedissionLock{
 
     @Override
     public void unLock(String key) {
-        this.getRLock(key).unlock();
+        this.getRLock(lockKeyPre + key).unlock();
     }
 
     private RLock getRLock(String objectName) {
-        RLock rLock = redissonClient.getLock(objectName);
+        String saveKey = Thread.currentThread().getId() + ":" + objectName;
+        RLock rLock = rLockConcurrentMap.get(saveKey);
+
+        if (rLock == null) {
+            rLock = this.newRLock(objectName);
+            rLockConcurrentMap.put(saveKey, rLock);
+        }
+
         return rLock;
+    }
+
+    private RLock newRLock(String key) {
+        return redissonClient.getLock(key);
     }
 
 }
