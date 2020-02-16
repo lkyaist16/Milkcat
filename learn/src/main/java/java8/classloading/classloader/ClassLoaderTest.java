@@ -15,6 +15,8 @@ import java.io.InputStream;
 public class ClassLoaderTest {
 
     public static void main(String[] args) throws Exception {
+
+        //自定义一个类加载器
         ClassLoader myLoader = new ClassLoader() {
             /**
              * Loads the class with the specified <a href="#name">binary name</a>.
@@ -51,10 +53,12 @@ public class ClassLoaderTest {
             }
         };
 
+        //用自定义的类加载器去加载一个类
         Object obj = myLoader.loadClass("java8.classloading.classloader.ClassLoaderTest").newInstance();
 
         System.out.println(obj.getClass());
 
+        //与相对路径的类相对比
         System.out.println(obj instanceof java8.classloading.classloader.ClassLoaderTest);
 
     }

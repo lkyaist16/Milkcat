@@ -63,6 +63,12 @@ public class RedssionLockImpl implements IRedissionLock{
         this.getRLock(lockKeyPre + key).unlock();
     }
 
+    /**
+     * 根据keyName获取锁
+     * 如果获取不到则会新建一个锁
+     * @param objectName
+     * @return
+     */
     private RLock getRLock(String objectName) {
         String saveKey = Thread.currentThread().getId() + ":" + objectName;
         RLock rLock = rLockConcurrentMap.get(saveKey);
