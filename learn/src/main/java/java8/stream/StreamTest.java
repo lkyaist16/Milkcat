@@ -14,31 +14,32 @@ public class StreamTest {
 
     public static void main(String[] args) {
 
-        List list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
-        list.parallelStream()
-                .forEach(num -> System.out.println("当前线程名称：" + Thread.currentThread().getName()));
-        List filterList = Arrays.asList(1, 2, 3, 4, 5);
-        List resultList = new ArrayList();
-        list.parallelStream().filter(num -> !filterList.contains(num)).forEach(num -> {
-            resultList.add(num);
-        });
-
-        resultList.parallelStream().forEach(num -> {
-            System.out.println("resultList里获取到的值" + num);
-        });
-
-
-//        ThreadLocal threadLocal = new ThreadLocal();
-//        threadLocal.set("aaa");
-//        List list2 = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
-//
-//        list2.stream().forEach(num -> {
-//            System.out.println("当前线程："+ Thread.currentThread().getName() + " 获取到值："+threadLocal.get());
+//        List list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+//        list.parallelStream()
+//                .forEach(num -> System.out.println("当前线程名称：" + Thread.currentThread().getName()));
+//        List filterList = Arrays.asList(1, 2, 3, 4, 5);
+//        List resultList = new ArrayList();
+//        list.parallelStream().filter(num -> !filterList.contains(num)).forEach(num -> {
+//            resultList.add(num);
 //        });
 //
-//        list2.parallelStream().forEach(num -> {
-//            System.out.println("当前线程："+ Thread.currentThread().getName() + " 获取到值："+threadLocal.get());
+//        resultList.parallelStream().forEach(num -> {
+//            System.out.println("resultList里获取到的值" + num);
 //        });
+
+
+        ThreadLocal threadLocal = new ThreadLocal();
+        threadLocal.set("aaa");
+        List list2 = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+        list2.stream().forEach(num -> {
+            System.out.println("当前线程："+ Thread.currentThread().getName() + " 获取到值："+threadLocal.get());
+        });
+
+        list2.parallelStream().forEach(num -> {
+            System.out.println("当前线程："+ Thread.currentThread().getName() + " 获取到值："+threadLocal.get());
+        });
+
 
 
     }
