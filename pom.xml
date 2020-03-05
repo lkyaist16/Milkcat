@@ -12,6 +12,7 @@
         <module>distributed-lock</module>
         <module>rocketMq-stream</module>
         <module>rocketMq-native</module>
+        <module>netty</module>
     </modules>
     <packaging>pom</packaging>
 
