@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.march;
 
 /**
  * 2020/3/3
@@ -17,7 +17,7 @@ package leetcode;
  * 链接：https://leetcode-cn.com/problems/sorted-merge-lcci
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-public class Solution {
+public class MergeSolution {
     public static void merge(int[] A, int m, int[] B, int n) {
         int index = m + n - 1;
         int aIndex = m - 1;
