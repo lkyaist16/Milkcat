@@ -1,5 +1,8 @@
-package thread.concurrency;
+package juc.concurrency;
 
+/**
+ * 多线程和非多线程测试
+ */
 public class ConcurrencyTest {
 
     private static final long count = 100001;

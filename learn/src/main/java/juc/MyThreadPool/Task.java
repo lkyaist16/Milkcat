@@ -1,4 +1,4 @@
-package thread.MyThreadPool;
+package juc.MyThreadPool;
 
 public class Task {
     private int id;

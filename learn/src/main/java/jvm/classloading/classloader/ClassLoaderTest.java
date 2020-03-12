@@ -1,4 +1,4 @@
-package java8.classloading.classloader;
+package jvm.classloading.classloader;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -54,12 +54,12 @@ public class ClassLoaderTest {
         };
 
         //用自定义的类加载器去加载一个类
-        Object obj = myLoader.loadClass("java8.classloading.classloader.ClassLoaderTest").newInstance();
+        Object obj = myLoader.loadClass("jvm.classloading.classloader.ClassLoaderTest").newInstance();
 
         System.out.println(obj.getClass());
 
         //与相对路径的类相对比
-        System.out.println(obj instanceof java8.classloading.classloader.ClassLoaderTest);
+        System.out.println(obj instanceof jvm.classloading.classloader.ClassLoaderTest);
 
     }
 

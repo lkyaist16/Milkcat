@@ -1,4 +1,4 @@
-package java8.classloading.init;
+package jvm.classloading.init;
 
 /**
  * 类初始化阶段：<client>()方法在多线程环境中会被加锁

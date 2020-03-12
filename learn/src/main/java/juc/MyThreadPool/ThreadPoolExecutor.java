@@ -1,4 +1,4 @@
-package thread.MyThreadPool;
+package juc.MyThreadPool;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;

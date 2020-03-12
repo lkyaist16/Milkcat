@@ -1,4 +1,4 @@
-package java8.classloading.resolution;
+package jvm.classloading.resolution;
 
 /**
  * JVM解析阶段：将常量池内的符号引用替换为直接引用的过程

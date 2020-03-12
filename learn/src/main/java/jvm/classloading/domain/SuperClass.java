@@ -1,4 +1,4 @@
-package java8.classloading.domain;
+package jvm.classloading.domain;
 
 public class SuperClass {
     static {

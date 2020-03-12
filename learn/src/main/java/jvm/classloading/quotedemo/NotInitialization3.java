@@ -1,6 +1,6 @@
-package java8.classloading.quotedemo;
+package jvm.classloading.quotedemo;
 
-import java8.classloading.domain.ConstClass;
+import jvm.classloading.domain.ConstClass;
 
 public class NotInitialization3 {
     public static void main(String[] args) {

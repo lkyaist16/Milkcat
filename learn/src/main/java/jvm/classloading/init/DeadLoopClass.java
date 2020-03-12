@@ -1,4 +1,4 @@
-package java8.classloading.init;
+package jvm.classloading.init;
 
 public class DeadLoopClass {
 

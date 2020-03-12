@@ -21,7 +21,7 @@ public class TransctionProducer {
             @Override
             public Thread newThread(Runnable r) {
                 Thread thread = new Thread(r);
-                thread.setName("client-transaction-msg-check-thread");
+                thread.setName("client-transaction-msg-check-juc.thread");
                 return thread;
 
             }

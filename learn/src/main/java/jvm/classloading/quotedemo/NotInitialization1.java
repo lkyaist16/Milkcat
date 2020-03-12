@@ -1,6 +1,6 @@
-package java8.classloading.quotedemo;
+package jvm.classloading.quotedemo;
 
-import java8.classloading.domain.SubClass;
+import jvm.classloading.domain.SubClass;
 
 public class NotInitialization1 {
     public static void main(String[] args) {

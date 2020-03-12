@@ -1,7 +1,10 @@
-package thread.MyThreadPool;
+package juc.MyThreadPool;
 
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * 实现一个简单的线程池
+ */
 public class DemoTest {
     public static void main(String[] args) throws InterruptedException {
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(10);

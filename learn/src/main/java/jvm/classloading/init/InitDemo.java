@@ -1,4 +1,4 @@
-package java8.classloading.init;
+package jvm.classloading.init;
 
 /**
  * 初始化阶段：执行类加载器的<client>()方法，赋值和静态语句块
