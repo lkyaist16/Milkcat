@@ -18,26 +18,27 @@ package leetcode.march;
  * <p>
  * 解释:
  * 我们可以构造的最长的回文串是"dccaccd", 它的长度是 7。
+ *
+ * 思路：总长度 = 奇数个数 + 偶数长度
  */
 public class LongestPalindromeSolution {
 
     public static int longestPalindrome(String s) {
-        int[] count = new int[128];
-        for (char c: s.toCharArray())
-            count[c]++;
-
-        int ans = 0;
-        for (int v: count) {
-            ans += v / 2 * 2;
-            if (v % 2 == 1 && ans % 2 == 0)
-                ans++;
+        // 找出可以构成最长回文串的长度
+        int[] arr = new int[128];
+        for(char c : s.toCharArray()) {
+            arr[c]++;
         }
-        return ans;
+        int count = 0;
+        for (int i : arr) {
+            count += (i % 2);
+        }
+        return count == 0 ? s.length() : (s.length() - count + 1);
     }
 
 
     public static void main(String[] args) {
-        System.out.println(longestPalindrome("civilwartestingwhetherthatnaptionoranynartionsoconceivedandsodedicatedcanlongendureWeareqmetonagreatbattlefiemldoftzhatwarWehavecometodedicpateaportionofthatfieldasafinalrestingplaceforthosewhoheregavetheirlivesthatthatnationmightliveItisaltogetherfangandproperthatweshoulddothisButinalargersensewecannotdedicatewecannotconsecratewecannothallowthisgroundThebravelmenlivinganddeadwhostruggledherehaveconsecrateditfaraboveourpoorponwertoaddordetractTgheworldadswfilllittlenotlenorlongrememberwhatwesayherebutitcanneverforgetwhattheydidhereItisforusthelivingrathertobededicatedheretotheulnfinishedworkwhichtheywhofoughtherehavethusfarsonoblyadvancedItisratherforustobeherededicatedtothegreattdafskremainingbeforeusthatfromthesehonoreddeadwetakeincreaseddevotiontothatcauseforwhichtheygavethelastpfullmeasureofdevotionthatweherehighlyresolvethatthesedeadshallnothavediedinvainthatthisnationunsderGodshallhaveanewbirthoffreedomandthatgovernmentofthepeoplebythepeopleforthepeopleshallnotperishfromtheearth"));
+        System.out.println(longestPalindrome("aaabbb"));
     }
 
 }
