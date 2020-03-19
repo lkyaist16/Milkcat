@@ -4,7 +4,7 @@ package jvm.jvmlockdemo;
  * 死锁示例：两个锁A、B
  * 线程一获取锁A后在方法块内尝试获取锁B
  * 线程二获取锁B后在方法块内尝试获取锁A
- *
+ * <p>
  * 此时两线程互相等待锁的释放，不能执行接下来的代码
  * 线程卡死在这里，形成死锁
  */
@@ -25,7 +25,7 @@ public class DeadLock {
                         }
                     }
                 } catch (Exception e) {
-                   e.printStackTrace();
+                    e.printStackTrace();
                 } finally {
                     System.out.println(Thread.currentThread().getName() + "执行完毕");
                 }
