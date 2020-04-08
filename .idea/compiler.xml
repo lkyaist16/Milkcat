@@ -7,22 +7,24 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="nacos-demo" />
-        <module name="learn" />
-        <module name="springboot-rocketmq" />
+        <module name="Sample-3-Distributed-lock" />
+        <module name="Sample-4-netty" />
+        <module name="Sample-2-RocketMq-SpringCloud" />
+        <module name="Sample-1-RocketMq-native" />
         <module name="springboot-common" />
-        <module name="springcloud-stream" />
+        <module name="Sample-0-java-learn" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="learn" target="1.8" />
       <module name="rocketmq" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="learn" options="-parameters" />
-      <module name="springboot-rocketmq" options="-parameters" />
-      <module name="springcloud-stream" options="-parameters" />
+      <module name="Sample-0-java-learn" options="-parameters" />
+      <module name="Sample-1-RocketMq-native" options="-parameters" />
+      <module name="Sample-2-RocketMq-SpringCloud" options="-parameters" />
+      <module name="Sample-4-netty" options="-parameters" />
     </option>
   </component>
 </project>

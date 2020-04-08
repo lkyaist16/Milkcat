@@ -1,0 +1,74 @@
+spring:
+  cloud:
+    stream:
+      rocketmq:
+        binder:
+          name-server: 10.1.8.27:9876
+        bindings:
+          output1:
+            producer:
+              group: binder-group1
+              sync: true
+          output2:
+            producer:
+              group: binder-group2
+              sync: true
+          output4:
+            producer:
+              group: myTxProducerGroup
+              sync: true
+              transactional: true
+          output5:
+            producer:
+              group: pull-binder-group
+              sync: true
+          input1:
+            comsumer:
+              orderly: true
+          input2:
+            comsumer:
+              tags: Tag-output2
+              broadcasting: false #是否属于广播模式
+              orderly: true #顺序消费
+          input5:
+            comsumer:
+              orderly: true
+      bindings:
+        output1:
+          destination: test-topic
+          content-type: text/plain
+        output2:
+          destination: test-topic2
+          content-type: text/plain
+        output4:
+          destination: TransactionTopic
+          content-type: application/json
+        output5:
+          destination: pull-topic2
+          content-type: text/plain
+        input1:
+          destination: test-topic1
+          content-type: text/plain
+          group: input-group1
+        input2:
+          destination: test-topic2
+          content-type: text/plain
+          group: input-group2
+        input3:
+          destination: test-topic3
+          content-type: application/json
+          group: input-group3
+        input4:
+          destination: TransactionTopic
+          content-type: application/json
+          group: input-group4
+        input5:
+          destination: test-topic
+          content-type: text/plain
+          group: input-group5
+  application:
+    name: rocketmq-example
+
+server:
+  port: 7778
+

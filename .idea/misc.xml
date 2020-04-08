@@ -15,6 +15,7 @@
         <option value="$PROJECT_DIR$/nacos-demo/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-common/pom.xml" />
         <option value="$PROJECT_DIR$/rocketMq-stream/pom.xml" />
+        <option value="$PROJECT_DIR$/distributed-lock/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
