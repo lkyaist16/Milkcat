@@ -1,6 +1,5 @@
 package com.part5.designpatten.factory.abt;
 
-import com.designpatten.factory.abt.domain.*;
 import com.part5.designpatten.factory.abt.domain.*;
 
 public class ColorFactory extends AbstractFactory {
