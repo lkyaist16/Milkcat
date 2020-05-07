@@ -38,9 +38,6 @@ public class StreamTest {
         list2.parallelStream().forEach(num -> {
             System.out.println("当前线程："+ Thread.currentThread().getName() + " 获取到值："+threadLocal.get());
         });
-
-
-
     }
 
 }
