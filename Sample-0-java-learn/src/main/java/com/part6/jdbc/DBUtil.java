@@ -4,11 +4,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DBUtil {
-    public static final String URL = "jdbc:mysql://";
+    public static final String URL = "jdbc:mysql://122.51.97.239:3306/demo?useUnicode=true&characterEncoding=utf8";
 
-    public static final String USER = "";
+    public static final String USER = "root";
 
-    public static final String PASSWORD = "";
+    public static final String PASSWORD = "123456";
 
     private static Connection connection = null;
 
