@@ -15,7 +15,7 @@ public class Producer implements Runnable {
             }
             synchronized (TestPC.queue) {
                 goods = new Goods(1, "商品");
-                if(TestPC.queue.size() < )
+//                if(TestPC.queue.size() < )
             }
         }
 
