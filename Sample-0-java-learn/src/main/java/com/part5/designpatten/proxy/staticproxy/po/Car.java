@@ -1,4 +1,6 @@
-package com.part5.designpatten.proxy.staticproxy;
+package com.part5.designpatten.proxy.staticproxy.po;
+
+import com.part5.designpatten.proxy.staticproxy.proxy.Moveable;
 
 import java.util.Random;
 

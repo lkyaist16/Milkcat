@@ -1,4 +1,4 @@
-package com.part5.designpatten.proxy.dynamicproxy;
+package com.part5.designpatten.proxy.dynamicproxy.jdkproxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

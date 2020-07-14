@@ -1,7 +1,7 @@
-package com.part5.designpatten.proxy.dynamicproxy;
+package com.part5.designpatten.proxy.dynamicproxy.jdkproxy;
 
-import com.part5.designpatten.proxy.staticproxy.Car;
-import com.part5.designpatten.proxy.staticproxy.Moveable;
+import com.part5.designpatten.proxy.staticproxy.po.Car;
+import com.part5.designpatten.proxy.staticproxy.proxy.Moveable;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
