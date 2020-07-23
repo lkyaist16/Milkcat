@@ -7,13 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="nacos-demo" />
-        <module name="rocketMq-native" />
-        <module name="Sample-0-java-learn" />
-        <module name="Sample-1-RocketMq-native" />
-        <module name="Sample-2-RocketMq-SpringCloud" />
         <module name="Sample-3-Distributed-lock" />
-        <module name="Sample-4-netty" />
         <module name="springboot-common" />
+        <module name="Sample-4-netty" />
+        <module name="rocketMq-native" />
+        <module name="Sample-1-RocketMq-native" />
+        <module name="Sample-0-java-learn" />
+        <module name="Sample-2-RocketMq-SpringCloud" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
