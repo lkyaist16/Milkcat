@@ -1,4 +1,4 @@
-package com.part9.others;
+package com.part9.others.mysql;
 
 import cn.smallbun.screw.core.Configuration;
 import cn.smallbun.screw.core.engine.EngineConfig;
