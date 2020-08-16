@@ -3,10 +3,14 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Sample-0-java-learn" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Sample-0-java-learn/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Sample-1-RocketMq-native" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Sample-1-RocketMq-native/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Sample-2-RocketMq-SpringCloud" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Sample-2-RocketMq-SpringCloud/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Sample-3-Distributed-lock" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Sample-3-Distributed-lock/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Sample-4-netty" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../Nacos-new/console/src/main/resources/application.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Sample-4-netty/src/main/java" charset="UTF-8" />
   </component>
 </project>

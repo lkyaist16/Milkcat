@@ -26,6 +26,7 @@
       <module name="Sample-1-RocketMq-native" options="-parameters" />
       <module name="Sample-2-RocketMq-SpringCloud" options="-parameters" />
       <module name="Sample-4-netty" options="-parameters" />
+      <module name="rocketMq-native" options="-parameters" />
     </option>
   </component>
 </project>
