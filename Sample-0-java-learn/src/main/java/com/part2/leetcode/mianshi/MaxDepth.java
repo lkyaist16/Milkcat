@@ -26,11 +26,8 @@ package com.part2.leetcode.mianshi;
  */
 public class MaxDepth {
     public int maxDepth(TreeNode root) {
-
-
-        return 0;
-
-
+        if(root == null) return 0;
+        return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
     }
 
     public class TreeNode {
