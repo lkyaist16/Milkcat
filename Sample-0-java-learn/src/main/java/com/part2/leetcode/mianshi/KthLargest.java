@@ -1,5 +1,7 @@
 package com.part2.leetcode.mianshi;
 
+import com.part2.leetcode.october.PreorderTraversal;
+
 /**
  * 给定一棵二叉搜索树，请找出其中第k大的节点。
  * <p>
@@ -57,21 +59,31 @@ public class KthLargest {
 //        dfs(root.right);
 //    }
 
-    //深度优先搜索：中序遍历倒叙
-    //深度优先：先找到最深处节点
-    public void dfs(TreeNode root) {
+    public static void dfs(TreeNode root) {
         if (root == null) {
             return;
         }
-        dfs(root.right);
-        if (k == 0) {
-            return;
-        }
-        if (--k == 0) {
-            result = root.val;
-        }
+        System.out.println(root.val);
         dfs(root.left);
+        dfs(root.right);
     }
+
+
+    //深度优先搜索：中序遍历倒叙
+    //深度优先：先找到最深处节点
+//    public void dfs(TreeNode root) {
+//        if (root == null) {
+//            return;
+//        }
+//        dfs(root.right);
+//        if (k == 0) {
+//            return;
+//        }
+//        if (--k == 0) {
+//            result = root.val;
+//        }
+//        dfs(root.left);
+//    }
 
     public static class TreeNode {
         int val;
@@ -96,7 +108,7 @@ public class KthLargest {
         node3.left = node2;
         node3.right = node4;
         node2.left = node1;
-        System.out.println();
+        dfs(node5);
     }
 
 
