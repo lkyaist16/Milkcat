@@ -1,4 +1,4 @@
-package com.part2.leetcode.mianshi;
+package com.part2.leetcode.mianshi.tree;
 
 import java.util.Arrays;
 

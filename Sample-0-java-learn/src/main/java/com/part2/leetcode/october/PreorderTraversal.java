@@ -1,7 +1,5 @@
 package com.part2.leetcode.october;
 
-import com.part2.leetcode.mianshi.KthLargest;
-
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
