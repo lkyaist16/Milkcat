@@ -1,12 +1,9 @@
 package com.part2.leetcode.mianshi.tree;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
- * 从上到下按层打印二叉树，同一层的节点按从左到右的顺序打印，每一层打印到一行。
+ * 从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。
  * <p>
  *  
  * <p>
@@ -18,13 +15,9 @@ import java.util.Queue;
  * 9  20
  * /  \
  * 15   7
- * 返回其层次遍历结果：
+ * 返回：
  * <p>
- * [
- * [3],
- * [9,20],
- * [15,7]
- * ]
+ * [3,9,20,15,7]
  *  
  * <p>
  * 提示：
@@ -32,38 +25,42 @@ import java.util.Queue;
  * 节点总数 <= 1000
  * <p>
  * 来源：力扣（LeetCode）
- * 链接：https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-ii-lcof
+ * 链接：https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-lcof
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class LevelOrder {
-    public List<List<Integer>> levelOrder(TreeNode root) {
+    public int[] levelOrder(TreeNode root) {
         if (root == null) {
-            return new ArrayList<>();
+            return new int[]{};
         }
 
+        List<Integer> res = new ArrayList<>();
+
         Queue<TreeNode> queue = new LinkedList<>();
-        List<List<Integer>> res = new ArrayList<>();
 
         queue.add(root);
 
         while (!queue.isEmpty()) {
-            int depth = queue.size();
-            List<Integer> subList = new ArrayList<>();
-
-            //所谓的广度遍历
-            for (int i = 0; i < depth; i++) {
-                TreeNode treeNode = queue.poll();
-                subList.add(treeNode.val);
-                if (treeNode.left != null) {
-                    queue.add(treeNode.left);
+            int n = queue.size();
+            for (int i = 0; i < n; i++) {
+                TreeNode poll = queue.poll();
+                res.add(poll.val);
+                if (poll.left != null) {
+                    queue.add(poll.left);
                 }
-                if (treeNode.right != null) {
-                    queue.add(treeNode.right);
+                if (poll.right != null) {
+                    queue.add(poll.right);
                 }
             }
-            res.add(subList);
         }
-        return res;
+
+        int[] array = new int[res.size()];
+
+        for (int i = 0; i < res.size(); i++) {
+            array[i] = res.get(i);
+        }
+
+         return array;
     }
 
 
@@ -72,8 +69,8 @@ public class LevelOrder {
         TreeNode left;
         TreeNode right;
 
-        TreeNode(int x) {
-            val = x;
+        public TreeNode(int val) {
+            this.val = val;
         }
     }
 }

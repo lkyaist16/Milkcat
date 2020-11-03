@@ -1,7 +1,6 @@
 package com.part2.leetcode.mianshi.tree;
 
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 
 /**
