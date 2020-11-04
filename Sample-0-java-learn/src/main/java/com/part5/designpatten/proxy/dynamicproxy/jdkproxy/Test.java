@@ -8,11 +8,11 @@ import java.lang.reflect.Proxy;
 
 public class Test {
     public static void main(String[] args) {
+        System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
         Car car = new Car();
         InvocationHandler h = new TimeHandler(car);
         Class<?> cls = car.getClass();
         Moveable m = (Moveable) Proxy.newProxyInstance(cls.getClassLoader(), cls.getInterfaces(), h);
         m.move();
     }
-
 }
