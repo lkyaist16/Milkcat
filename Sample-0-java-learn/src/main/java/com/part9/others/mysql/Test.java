@@ -17,8 +17,8 @@ public class Test {
         //数据源
         HikariConfig hikariConfig = new HikariConfig();
         hikariConfig.setDriverClassName("com.mysql.jdbc.Driver");
-        hikariConfig.setJdbcUrl("jdbc:mysql://10.16.10.246:3306/challenger_cucc");
-        hikariConfig.setUsername("cucc");
+        hikariConfig.setJdbcUrl("jdbc:mysql://10.16.10.246:3306/mars_simcard");
+        hikariConfig.setUsername("simcard");
         hikariConfig.setPassword("senthink");
         //设置可以获取tables remarks信息
         hikariConfig.addDataSourceProperty("useInformationSchema", "true");
@@ -32,7 +32,7 @@ public class Test {
                 //打开目录
                 .openOutputDir(true)
                 //文件类型
-                .fileType(EngineFileType.MD)
+                .fileType(EngineFileType.WORD)
                 //生成模板实现
                 .produceType(EngineTemplateType.freemarker).build();
 
