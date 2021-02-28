@@ -43,7 +43,7 @@ public class Test {
         //忽略表前缀
         ArrayList<String> ignorePrefix = new ArrayList();
         ignorePrefix.add("test_");
-        //忽略表后缀
+        //忽略表后缀˙
         ArrayList<String> ignoreSuffix = new ArrayList();
         ignoreSuffix.add("_test");
         ProcessConfig processConfig = ProcessConfig.builder()
@@ -69,7 +69,6 @@ public class Test {
         new DocumentationExecute(config).execute();
 
     }
-
 
 
 }
