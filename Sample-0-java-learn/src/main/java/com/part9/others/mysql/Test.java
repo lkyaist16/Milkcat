@@ -17,8 +17,8 @@ public class Test {
         //数据源
         HikariConfig hikariConfig = new HikariConfig();
         hikariConfig.setDriverClassName("com.mysql.jdbc.Driver");
-        hikariConfig.setJdbcUrl("jdbc:mysql://10.16.10.246:3306/mars_simcard");
-        hikariConfig.setUsername("simcard");
+        hikariConfig.setJdbcUrl("jdbc:mysql://10.16.10.246:3306/mars_smart");
+        hikariConfig.setUsername("smart");
         hikariConfig.setPassword("senthink");
         //设置可以获取tables remarks信息
         hikariConfig.addDataSourceProperty("useInformationSchema", "true");

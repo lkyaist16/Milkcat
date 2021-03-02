@@ -53,12 +53,12 @@ public class AddToArrayFrom {
         int i = n - 1, sum = 0, carry = 0;
 
         //如果A位数为0或者K值为0
-        while (i >= 0 || K !=0) {
+        while (i >= 0 || K != 0) {
             //A当前位
-            int x = i >= 0? A[i] : 0;
+            int x = i >= 0 ? A[i] : 0;
 
             //B当前位
-            int y = K != 0? K % 10 : 0;
+            int y = K != 0 ? K % 10 : 0;
 
             //当前和
             sum = x + y + carry;
@@ -79,7 +79,37 @@ public class AddToArrayFrom {
         return res;
     }
 
+    public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        ListNode a = headA;
+        ListNode b = headB;
+        while (a != null && b != null) {
+            if (a == b) {
+                return a;
+            }
+            a = a.next;
+            b = b.next;
+        }
+        return null;
+    }
+
+
+    public static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+            next = null;
+        }
+    }
+
+
     public static void main(String[] args) {
-        addToArrayForm(new int[]{1, 2, 0, 0}, 34);
+        ListNode headA = new ListNode(1);
+        ListNode headB = new ListNode(1);
+        ListNode a = new ListNode(2);
+        headA.next = a;
+        headB.next = a;
+        System.out.println(getIntersectionNode(headA, headB).val);
     }
 }
